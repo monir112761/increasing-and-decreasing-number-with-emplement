@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v.getId()==R.id.buttonLogin){
             count ++;
-            Test.setText("The Button is Clicked " + count + " times");
+            Test.setText("The Button is Clicked " + count + " times.");
         }
         if (v.getId()==R.id.buttonLogout){
             count --;
-            Test.setText("The Button is Clicked " + count + " times");
+            Test.setText("The Button is Clicked " + count + " times.");
         }
 
     }
