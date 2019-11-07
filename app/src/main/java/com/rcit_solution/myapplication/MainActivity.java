@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.sql.ResultSetMetaData;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     int count = 0;
     private Button buttonLogin, buttonLogout;
@@ -23,20 +24,38 @@ public class MainActivity extends AppCompatActivity {
         buttonLogout = findViewById(R.id.buttonLogout);
         Test = findViewById(R.id.Test);
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count ++;
-                Test.setText("The Button is Clicked " + count + " times");
-            }
-        });
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count--;
-                Test.setText("The Button is Clicked " + count + " times");
-            }
-        });
+        buttonLogin.setOnClickListener(this
+//                new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                count ++;
+//                Test.setText("The Button is Clicked " + count + " times");
+//            }
+//        }
+        );
+        buttonLogout.setOnClickListener(this
+//                new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                count--;
+//                Test.setText("The Button is Clicked " + count + " times");
+//            }
+//        }
+        );
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if (v.getId()==R.id.buttonLogin){
+            count ++;
+            Test.setText("The Button is Clicked " + count + " times");
+        }
+        if (v.getId()==R.id.buttonLogout){
+            count --;
+            Test.setText("The Button is Clicked " + count + " times");
+        }
 
     }
 }
